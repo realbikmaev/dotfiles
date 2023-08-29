@@ -5,11 +5,14 @@ HISTSIZE=2000          # number of lines to keep in memory
 HISTFILESIZE=4000      # number of lines to keep on disk
 shopt -s histappend
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+alias tmux='tmux source-file ~/.tmux.conf && tmux'
 alias prod="ENVIRONMENT=prod env=prod $1"
 alias dev="ENVIRONMENT=dev env=dev $1"
 alias cp='cp -Rv'
 alias ll="ls -lahtrF"
 alias zz="code ~/.bashrc"
+alias ss="code ~/dotfiles/secrets.sh"
 alias hi="history | grep $1"
 
 function b {
@@ -17,7 +20,11 @@ function b {
 }
 
 function cd() {
-    builtin cd "$1" || return
+    if [ $# -eq 0 ]; then
+        builtin cd ~ || return
+    else
+        builtin cd "$1" || return
+    fi
     ll
 }
 
