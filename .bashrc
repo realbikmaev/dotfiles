@@ -10,7 +10,8 @@ alias tmux='tmux source-file ~/.tmux.conf && tmux'
 alias prod="ENVIRONMENT=prod env=prod $1"
 alias dev="ENVIRONMENT=dev env=dev $1"
 alias cp='cp -Rv'
-alias ll="ls -lahtrF"
+alias ll="ls -lahtrFG"
+alias ls="ls -lahFG"
 alias zz="code ~/.bashrc"
 alias ss="code ~/dotfiles/secrets.sh"
 alias hi="history | grep $1"
@@ -25,7 +26,7 @@ function cd() {
     else
         builtin cd "$1" || return
     fi
-    ll
+    ls
 }
 
 function repo() {
