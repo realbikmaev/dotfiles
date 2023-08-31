@@ -16,6 +16,7 @@ alias zz="code ~/.bashrc"
 alias ss="code ~/dotfiles/secrets.sh"
 alias hi="history | grep $1"
 alias ec="echo $?"
+alias v="vim"
 
 export PS1='\[\e[38;5;211m\]\u\[\e[38;5;220m\]@\[\e[38;5;79m\]\H \[\e[38;5;177m\]\w \[\e[0m\]\$ '
 
