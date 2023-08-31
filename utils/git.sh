@@ -25,5 +25,4 @@ function git_proxy {
 }
 
 alias gg="git add . && git commit -m 'asdf'"
-alias gp="git add . && git commit -m 'asdf' && git push"
-alias ggg="git add . && git commit -m $1"
+alias ggg="git add . && git commit -m 'asdf' && git push"
