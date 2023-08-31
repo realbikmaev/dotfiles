@@ -20,6 +20,10 @@ function gc {
     get_commit "$1"
 }
 
+function git_proxy {
+    git config --global http.proxy "$1"
+}
+
 alias gg="git add . && git commit -m 'asdf'"
 alias gp="git add . && git commit -m 'asdf' && git push"
 alias ggg="git add . && git commit -m $1"
