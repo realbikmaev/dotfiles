@@ -26,3 +26,13 @@ function git_proxy {
 
 alias gg="git add . && git commit -m 'asdf'"
 alias ggg="git add . && git commit -m 'asdf' && git push"
+
+function all_repos() {
+    local work="$HOME/work"
+    mkdir -p "$work"
+    cd "$work" || return
+    local repos=$(curl -s https://api.github.com/users/realbikmaev/repos | jq -r '.[].clone_url')
+    for repo in $repos; do
+        git clone "$repo"
+    done
+}
