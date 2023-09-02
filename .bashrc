@@ -2,7 +2,7 @@
 bind -s 'set completion-ignore-case on'
 HISTCONTROL=ignoreboth # ignore duplicates and commands starting with space
 HISTSIZE=2000          # number of lines to keep in memory
-HISTFILESIZE=4000      # number of lines to keep on disk
+HISTFILESIZE=10000     # number of lines to keep on disk
 shopt -s histappend
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
