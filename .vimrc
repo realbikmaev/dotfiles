@@ -11,3 +11,7 @@ nnoremap l h
 nnoremap j j
 nnoremap k k
 nnoremap ; l
+inoremap jj <ESC>
+set noswapfile
+set nobackup
+set nowritebackup
