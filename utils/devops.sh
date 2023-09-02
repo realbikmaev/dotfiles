@@ -32,5 +32,3 @@ alias dd="flyctl deploy --strategy=immediate --detach"
 
 alias w="wrangler"
 alias tunnel="cloudflared tunnel --url $1"
-
-source "$HOME/dotfiles/secrets.sh"

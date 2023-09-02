@@ -1,8 +1,7 @@
-# quality of life improvements
 bind -s 'set completion-ignore-case on'
-HISTCONTROL=ignoreboth # ignore duplicates and commands starting with space
-HISTSIZE=2000          # number of lines to keep in memory
-HISTFILESIZE=10000     # number of lines to keep on disk
+HISTCONTROL=ignoreboth
+HISTSIZE=2000
+HISTFILESIZE=10000
 shopt -s histappend
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
@@ -40,10 +39,9 @@ function repo() {
     code .
 }
 
-# aliases and functions
 dotfiles="$HOME/dotfiles"
 utils="$dotfiles/utils"
-
+source "$HOME/dotfiles/secrets.sh"
 source "$utils/python.sh"
 source "$utils/devops.sh"
 source "$utils/rust.sh"
