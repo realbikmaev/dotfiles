@@ -1,6 +1,6 @@
 bind -s 'set completion-ignore-case on'
 HISTCONTROL=ignoreboth
-HISTSIZE=2000
+HISTSIZE=1000
 HISTFILESIZE=10000
 shopt -s histappend
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -14,6 +14,7 @@ alias ls="ls -lahFG"
 alias zz="code ~/.bashrc"
 alias ss="code ~/dotfiles/secrets.sh"
 alias hi="history | grep $1"
+alias h="history | less"
 alias ec="echo $?"
 alias v="vim"
 
