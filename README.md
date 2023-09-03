@@ -1,12 +1,12 @@
 # dotfiles
 
-rawdoggin' bash like a boomer as god intended us to
+just rawdoggin' bash as god intended
 
-# todo
+also i have a cute script to bootstrap my dotfiles in dockerfiles/on bare metal:
 
-util to bootstrap my dotfiles in dockerfiles/on bare metal
-
-`curl https://bikmaev.com/dotfiles | bash`
+```bash
+curl https://bikmaev.com/dotfiles | bash
+```
 
 # nota bene
 
