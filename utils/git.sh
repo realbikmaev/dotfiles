@@ -33,6 +33,7 @@ function all_repos() {
     cd "$work" || return
     local repos=$(curl -s https://api.github.com/users/realbikmaev/repos | jq -r '.[].clone_url')
     for repo in $repos; do
+        [[ "$repo" =~ "dotfiles" ]] && continue
         git clone "$repo"
     done
 }
