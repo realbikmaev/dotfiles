@@ -12,6 +12,8 @@ if [[ "$platform" == "Linux" ]]; then
     curl https://pyenv.run | bash
     source "$utils/python.sh"
     pyenv install 3.10
+    pyenv global 3.10
+    sudo apt install --yes tmux vim
 fi
 
 rm -rf ~/.bashrc
