@@ -38,8 +38,11 @@ else
     alias t="tmux"
 fi
 
-alias tls="t list-sessions"
-alias ta="t attach-session -t $1"
+alias tn="t new-session -s $1"
+alias ta="t attach-session -t $(tmux list-sessions -F "#{session_name}" | sort | tail -n 1)"
+alias tl="t list-sessions"
+alias ts="t attach-session -t $1"
+alias tk="t kill-session -t $1"
 alias z="zellij"
 alias zls="zellij list-sessions"
 
@@ -75,6 +78,10 @@ function repo() {
     cd "$1" || return
     git init --initial-branch=master # chaotic evil
     code .
+}
+
+function secrets() {
+    cp "$dotfiles/secrets.example.sh" "$dotfiles/secrets.sh"
 }
 
 source "$utils/python.sh"
