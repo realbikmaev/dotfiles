@@ -7,9 +7,9 @@ set number relativenumber
 set hlsearch
 set ruler
 highlight Comment ctermfg=green
-nnoremap l h
-nnoremap j j
-nnoremap k k
+nnoremap j h
+nnoremap k j
+nnoremap l k
 nnoremap ; l
 inoremap jj <ESC>
 set noswapfile
