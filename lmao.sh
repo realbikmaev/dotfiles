@@ -18,9 +18,7 @@ function set_var_if_empty {
 
     if [[ -n "$var_value" ]]; then
         cp "$self" "$self.tmp"
-        sed -i.bak "/^$var_name=\"/c\\
-$var_name=\"$var_value\"\\
-" "$self.tmp"
+        sed -i.bak "/^$var_name=\"/c\\$var_name=\"$var_value\"\\" "$self.tmp"
         rm "$self.tmp.bak"
         mv "$self.tmp" "$self"
         export "$var_name"="$var_value"
