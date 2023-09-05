@@ -1,16 +1,23 @@
 export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="$HOME/.pyenv/bin:$PATH"
 
-eval "$(pyenv init --no-rehash --path)"
+if [ "$platform" == "linux" ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init --no-rehash --path)"
+elif [ "$platform" == "Darwin" ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(/opt/homebrew/bin/pyenv init --no-rehash --path)"
+fi
+
 if which pyenv-virtualenv-init >/dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-alias p="python"
+
+alias p="python3"
 alias pv="pyenv"
-alias pr="python -m $1"
-alias pm="python -m app.main"
-alias pt="python -m app.test"
-alias pi="pip install $1"
-alias pu="pip install -U $1"
-alias pui="pip uninstall -y $1"
+alias pr="python3 -m $1"
+alias pm="python3 -m app.main"
+alias pt="python3 -m app.test"
+alias pi="pip3 install $1"
+alias pu="pip3 install -U $1"
+alias pui="pip3 uninstall -y $1"
 
 alias pp="poetry"
 alias ppa="poetry add $1"

@@ -6,7 +6,7 @@ time::clock() {
     printf "%6.4f" "$(echo $((te - ts))/1000000000 | bc -l)"
     unset ts te
 }
-time::clock
+# time::clock
 bind -s 'set completion-ignore-case on'
 shopt -s histappend
 HISTCONTROL=ignoreboth
@@ -71,4 +71,4 @@ source "$utils/devops.sh"
 source "$utils/rust.sh"
 source "$utils/git.sh"
 source "$utils/js.sh"
-echo "loaded in $(time::clock) seconds"
+# echo "loaded in $(time::clock) seconds"

@@ -13,6 +13,7 @@ if [[ "$platform" == "Linux" ]]; then
     source "$utils/python.sh"
     pyenv install 3.10
     pyenv global 3.10
+    pip3 install utilki
     sudo apt install --yes tmux vim
     curl https://sh.rustup.rs -sSf | sh -s -- --profile complete --default-toolchain nightly --no-modify-path -y
     source "$utils/rust.sh"
