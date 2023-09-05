@@ -38,4 +38,4 @@ function all_repos() {
     done
 }
 
-alias dotgitismine="sudo chown -R "${USER:-$(id -un)}" ."
+alias dotgitismine="sudo chown -R \"${USER:-$(id -un)}\" ."

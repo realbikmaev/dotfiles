@@ -1,6 +1,9 @@
 time::clock() {
-    [ -z "$ts" ]&&{ ts=`date +%s%N`;return;}||te=`date +%s%N`
-    printf "%6.4f" $(echo $((te-ts))/1000000000 | bc -l)
+    [ -z "$ts" ] && {
+        ts=$(date +%s%N)
+        return
+    } || te=$(date +%s%N)
+    printf "%6.4f" "$(echo $((te - ts))/1000000000 | bc -l)"
     unset ts te
 }
 time::clock
@@ -11,7 +14,7 @@ HISTSIZE=1000
 HISTFILESIZE=10000
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
-platform=$(uname)
+export platform=$(uname)
 dotfiles="$HOME/dotfiles"
 utils="$dotfiles/utils"
 source "$dotfiles/load_secrets.sh"
@@ -30,7 +33,7 @@ alias h="history | less"
 alias v="vim"
 alias u="cd .."
 
-if [[ -n "$TMUX_AS_SUDO" ]]; then
+if [[ "$TMUX_AS_SUDO" == "true" ]]; then
     alias t="sudo -u khaidar tmux"
 else
     alias t="tmux"
