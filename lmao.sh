@@ -13,7 +13,7 @@ function set_var_if_empty {
     var_value="${!var_name}"
 
     if [[ -z "$var_value" ]]; then
-        read -r -p "Provide a value for variable $var_name: " var_value
+        read -r -p "provide a value for variable $var_name: " var_value
     fi
 
     if [[ -n "$var_value" ]]; then
@@ -23,7 +23,7 @@ function set_var_if_empty {
         mv "$self.tmp" "$self"
         export "$var_name"="$var_value"
     else
-        echo "Invalid input for variable $var_name"
+        echo "invalid input for variable $var_name"
     fi
 }
 
