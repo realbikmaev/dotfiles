@@ -31,7 +31,6 @@ alias kh="code $HOME/.ssh/known_hosts"
 alias hi="history | grep $1"
 alias h="history | less"
 alias v="vim"
-alias u="cd .."
 
 if [[ "$TMUX_AS_SUDO" == "true" ]]; then
     alias t="sudo -u khaidar tmux"
@@ -57,6 +56,18 @@ function cd() {
         builtin cd "$1" || return
     fi
     ls
+}
+
+function u {
+    local count=$1
+    if [ -z "${count}" ]; then
+        count=1
+    fi
+    local path=""
+    for i in $(seq 1 "${count}"); do
+        path="${path}../"
+    done
+    cd $path || return
 }
 
 function repo() {
