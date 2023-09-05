@@ -14,6 +14,7 @@ if [[ "$platform" == "Linux" ]]; then
     pyenv install 3.10
     pyenv global 3.10
     sudo apt install --yes tmux vim
+    curl https://sh.rustup.rs -sSf | sh -s -- --profile complete --default-toolchain nightly --no-modify-path -y
 fi
 
 rm -rf ~/.bashrc
