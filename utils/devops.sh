@@ -32,3 +32,13 @@ alias dd="flyctl deploy --strategy=immediate --detach"
 
 alias w="wrangler"
 alias tunnel="cloudflared tunnel --url $1"
+
+if [[ "$platform" == "Linux" ]]; then
+    export FLYCTL_INSTALL="/home/khaidar/.fly"
+    export PATH="$FLYCTL_INSTALL/bin:$PATH"
+fi
+
+if [[ "$platform" == "Darwin" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+fi

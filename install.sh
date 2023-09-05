@@ -15,6 +15,9 @@ if [[ "$platform" == "Linux" ]]; then
     pyenv global 3.10
     sudo apt install --yes tmux vim
     curl https://sh.rustup.rs -sSf | sh -s -- --profile complete --default-toolchain nightly --no-modify-path -y
+    source "$utils/rust.sh"
+    cargo install zellij
+    curl -L https://fly.io/install.sh | sh
 fi
 
 rm -rf ~/.bashrc

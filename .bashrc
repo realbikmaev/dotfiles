@@ -1,11 +1,21 @@
+time::clock() {
+    [ -z "$ts" ]&&{ ts=`date +%s%N`;return;}||te=`date +%s%N`
+    printf "%6.4f" $(echo $((te-ts))/1000000000 | bc -l)
+    unset ts te
+}
+time::clock
 bind -s 'set completion-ignore-case on'
+shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=10000
-shopt -s histappend
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
-alias tmux='tmux source-file ~/.tmux.conf && tmux'
+platform=$(uname)
+dotfiles="$HOME/dotfiles"
+utils="$dotfiles/utils"
+source "$dotfiles/load_secrets.sh"
+
 alias prod="ENVIRONMENT=prod env=prod $1"
 alias dev="ENVIRONMENT=dev env=dev $1"
 alias cp='cp -Rv'
@@ -19,9 +29,17 @@ alias hi="history | grep $1"
 alias h="history | less"
 alias v="vim"
 alias u="cd .."
-alias t="sudo tmux"
-alias tt="tmux"
-alias uu="su - khaidar"
+
+if [[ -n "$TMUX_AS_SUDO" ]]; then
+    alias t="sudo -u khaidar tmux"
+else
+    alias t="tmux"
+fi
+
+alias tls="t list-sessions"
+alias ta="t attach-session -t $1"
+alias z="zellij"
+alias zls="zellij list-sessions"
 
 export PS1='\[\e[38;5;211m\]\u\[\e[38;5;220m\]@\[\e[38;5;79m\]\H \[\e[38;5;177m\]\w \[\e[0m\]\$ '
 
@@ -45,11 +63,9 @@ function repo() {
     code .
 }
 
-dotfiles="$HOME/dotfiles"
-utils="$dotfiles/utils"
-source "$HOME/dotfiles/secrets.sh"
 source "$utils/python.sh"
 source "$utils/devops.sh"
 source "$utils/rust.sh"
 source "$utils/git.sh"
 source "$utils/js.sh"
+echo "loaded in $(time::clock) seconds"

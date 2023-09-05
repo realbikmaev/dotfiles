@@ -1,11 +1,8 @@
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 
-eval "$(pyenv init -)"
-# this fucker below is very important apparently, while the default one above is dogshit
-eval "$(pyenv init --path)"
+eval "$(pyenv init --no-rehash --path)"
 if which pyenv-virtualenv-init >/dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
 alias p="python"
 alias pv="pyenv"
 alias pr="python -m $1"

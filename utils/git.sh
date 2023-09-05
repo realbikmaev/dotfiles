@@ -37,3 +37,5 @@ function all_repos() {
         git clone "$repo"
     done
 }
+
+alias dotgitismine="sudo chown -R "${USER:-$(id -un)}" ."
