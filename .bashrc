@@ -86,8 +86,18 @@ function repo() {
     code .
 }
 
-function secrets() {
+function dot_secrets() {
     cp "$dotfiles/secrets.example.sh" "$dotfiles/secrets.sh"
+}
+
+function dot_remote() {
+    user="$1"
+    host="$2"
+    rsync -av \
+        --exclude='.git/' \
+        --exclude='secrets.sh' \
+        "$dotfiles/" \
+        "$user@$host:/home/$user/dotfiles"
 }
 
 source "$utils/python.sh"
