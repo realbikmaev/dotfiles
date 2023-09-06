@@ -53,7 +53,7 @@ alias z="zellij"
 alias zls="zellij list-sessions"
 
 export PS1='\[\e[38;5;211m\]\u\[\e[38;5;220m\]@\[\e[38;5;79m\]\H \[\e[38;5;177m\]\w \[\e[0m\]\$ '
-
+alias s="source ~/.bashrc"
 function b {
     bash "$1.sh"
 }
