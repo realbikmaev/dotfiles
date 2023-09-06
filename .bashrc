@@ -38,8 +38,14 @@ else
     alias t="tmux"
 fi
 
-alias tn="t new-session -s $1"
-alias ta="t attach-session -t $(tmux list-sessions -F "#{session_name}" | sort | tail -n 1)"
+function tn() {
+    local session_name="$1"
+    t new-session -n "$session_name" -s "$session_name"
+}
+function ta() {
+    local session_name="$(tmux list-sessions -F "#{session_name}" | sort | tail -n 1)"
+    t attach-session -t "$session_name"
+}
 alias tl="t list-sessions"
 alias ts="t attach-session -t $1"
 alias tk="t kill-session -t $1"
