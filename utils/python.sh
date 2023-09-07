@@ -8,7 +8,7 @@ elif [ "$platform" == "Darwin" ]; then
     eval "$(/opt/homebrew/bin/pyenv init --no-rehash --path)"
 fi
 
-if which pyenv-virtualenv-init >/dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+if which pyenv-virtualenv-init >/dev/null 2>&1; then eval "$(pyenv virtualenv-init -)"; fi
 
 alias p="python3"
 alias pv="pyenv"
