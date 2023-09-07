@@ -49,6 +49,7 @@ function ta() {
 alias tl="t list-sessions"
 alias ts="t attach-session -t $1"
 alias tk="t kill-session -t $1"
+alias tc="t source-file ~/.tmux.conf"
 alias z="zellij"
 alias zls="zellij list-sessions"
 
