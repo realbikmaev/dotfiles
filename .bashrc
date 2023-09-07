@@ -86,11 +86,11 @@ function repo() {
     code .
 }
 
-function dot_secrets() {
+function dot-secrets() {
     cp "$dotfiles/secrets.example.sh" "$dotfiles/secrets.sh"
 }
 
-function dot_remote() {
+function dot-remote() {
     user="$1"
     host="$2"
     rsync -av \
