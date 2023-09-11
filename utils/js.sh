@@ -9,7 +9,7 @@ elif [[ "$platform" == 'Darwin' ]]; then
     [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 fi
 
-alias sr="npm run dev -- --open"
+alias sr="npm run dev"
 alias sd="ENVIRONMENT=dev npm run dev"
 alias sp="npm run build && ENVIRONMENT=dev npm run preview"
 alias sprod="npm run build && node build"
