@@ -1,11 +1,11 @@
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 if [ "$platform" == "linux" ]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init --no-rehash --path)"
 elif [ "$platform" == "Darwin" ]; then
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(/opt/homebrew/bin/pyenv init --no-rehash --path)"
+    eval "$(/opt/homebrew/bin/pyenv init - --no-rehash)"
 fi
 
 if which pyenv-virtualenv-init >/dev/null 2>&1; then eval "$(pyenv virtualenv-init -)"; fi
