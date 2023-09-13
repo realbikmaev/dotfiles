@@ -3,3 +3,7 @@ name = Khaidar Bikmaev
 email = khaidar@bikmaev.com
 [init]
 defaultBranch = master
+[push]
+default = simple
+[credential]
+helper = osxkeychain
