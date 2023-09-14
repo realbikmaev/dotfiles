@@ -8,7 +8,6 @@ if [ "$platform" == "Linux" ]; then
     eval "$(pyenv init --no-rehash --path)"
 elif [ "$platform" == "Darwin" ]; then
     eval "$(/opt/homebrew/bin/pyenv init - --no-rehash)"
-    echo "macos"
 fi
 
 if which pyenv-virtualenv-init >/dev/null 2>&1; then
