@@ -2,13 +2,19 @@ export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 
-if [ "$platform" == "linux" ]; then
+# export platform=$(uname)
+
+if [ "$platform" == "Linux" ]; then
     eval "$(pyenv init --no-rehash --path)"
 elif [ "$platform" == "Darwin" ]; then
     eval "$(/opt/homebrew/bin/pyenv init - --no-rehash)"
+    echo "macos"
 fi
 
-if which pyenv-virtualenv-init >/dev/null 2>&1; then eval "$(pyenv virtualenv-init -)"; fi
+if which pyenv-virtualenv-init >/dev/null 2>&1; then
+    eval "$(pyenv virtualenv-init -)"
+    echo "venv"
+fi
 
 alias p="python3"
 alias pv="pyenv"
