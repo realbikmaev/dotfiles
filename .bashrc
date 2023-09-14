@@ -94,11 +94,17 @@ function dot-secrets() {
 function dot-remote() {
     user="$1"
     host="$2"
+    port="$3"
+
+    if [ -z "$port" ]; then
+        port=22
+    fi
+
     rsync -av \
         --exclude='.git/' \
         --exclude='secrets.sh' \
         "$dotfiles/" \
-        "$user@$host:/home/$user/dotfiles"
+        "rsync://$user@$host:$port/home/$user/dotfiles"
 }
 
 source "$utils/python.sh"
@@ -109,5 +115,5 @@ source "$utils/js.sh"
 # echo "loaded in $(time::clock) seconds"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
