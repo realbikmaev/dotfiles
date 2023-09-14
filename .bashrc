@@ -107,6 +107,20 @@ function dot-remote() {
         "rsync://$user@$host:$port/home/$user/dotfiles"
 }
 
+function dot-scp {
+    user="$1"
+    host="$2"
+    port="$3"
+
+    if [ -z "$port" ]; then
+        port=22
+    fi
+
+    scp -r \
+        "$dotfiles/" \
+        "$user@$host:/home/$user/dotfiles"
+}
+
 source "$utils/python.sh"
 source "$utils/devops.sh"
 source "$utils/rust.sh"
