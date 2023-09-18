@@ -116,7 +116,7 @@ function dot-scp {
         port=22
     fi
 
-    scp -r \
+    scp -r -P "$port" \
         "$dotfiles/" \
         "$user@$host:/home/$user/dotfiles"
 }

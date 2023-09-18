@@ -12,7 +12,6 @@ fi
 
 if which pyenv-virtualenv-init >/dev/null 2>&1; then
     eval "$(pyenv virtualenv-init -)"
-    echo "venv"
 fi
 
 alias p="python3"
