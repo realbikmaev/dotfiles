@@ -31,7 +31,7 @@ alias kh="code $HOME/.ssh/known_hosts"
 alias hi="history | grep $1"
 alias h="history | less"
 alias v="vim"
-alias vsc="code ~/Library/Application Support/Code/User/settings.json"
+alias vsc="code ~/Library/Application\ Support/Code/User/settings.json"
 
 if [[ "$TMUX_AS_SUDO" == "true" ]]; then
     alias t="sudo -u khaidar tmux"
