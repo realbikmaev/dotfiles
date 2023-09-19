@@ -39,3 +39,8 @@ function all_repos() {
 }
 
 alias dotgitismine="sudo chown -R \"${USER:-$(id -un)}\" ."
+
+function clone() {
+    local repo="$1"
+    git clone "https://github.com/realbikmaev/$repo.git"
+}
