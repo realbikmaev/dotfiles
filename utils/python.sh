@@ -5,13 +5,17 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 # export platform=$(uname)
 
 if [ "$platform" == "Linux" ]; then
-    eval "$(pyenv init --no-rehash --path)"
+    if command -v pyenv >/dev/null 2>&1; then
+        eval "$(pyenv init --no-rehash --path)" >/dev/null 2>&1
+    fi
 elif [ "$platform" == "Darwin" ]; then
     eval "$(/opt/homebrew/bin/pyenv init - --no-rehash)"
 fi
 
 if which pyenv-virtualenv-init >/dev/null 2>&1; then
-    eval "$(pyenv virtualenv-init -)"
+    echo "before"
+    eval "$(pyenv virtualenv-init -)" 2>/dev/null
+    echo "after"
 fi
 
 alias p="python3"

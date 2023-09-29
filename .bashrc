@@ -88,10 +88,6 @@ function repo() {
     code .
 }
 
-function dot-secrets() {
-    cp "$dotfiles/secrets.example.sh" "$dotfiles/secrets.sh"
-}
-
 function dot-remote() {
     user="$1"
     host="$2"
@@ -104,8 +100,9 @@ function dot-remote() {
     rsync -av \
         --exclude='.git/' \
         --exclude='secrets.sh' \
+        -e "ssh -p $port -2" \
         "$dotfiles/" \
-        "rsync://$user@$host:$port/home/$user/dotfiles"
+        "$user@$host:/home/$user/dotfiles"
 }
 
 function dot-scp {
@@ -128,7 +125,3 @@ source "$utils/rust.sh"
 source "$utils/git.sh"
 source "$utils/js.sh"
 # echo "loaded in $(time::clock) seconds"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
