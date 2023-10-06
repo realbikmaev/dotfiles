@@ -13,9 +13,7 @@ elif [ "$platform" == "Darwin" ]; then
 fi
 
 if which pyenv-virtualenv-init >/dev/null 2>&1; then
-    echo "before"
     eval "$(pyenv virtualenv-init -)" 2>/dev/null
-    echo "after"
 fi
 
 alias p="python3"
