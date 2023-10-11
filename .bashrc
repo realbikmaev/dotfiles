@@ -119,6 +119,12 @@ function dot-scp {
         "$user@$host:/home/$user/dotfiles"
 }
 
+function exe() {
+    touch "$1"
+    chmod +x "$1"
+    code "$1"
+}
+
 source "$utils/python.sh"
 source "$utils/devops.sh"
 source "$utils/rust.sh"
