@@ -44,3 +44,4 @@ if [[ "$platform" == "Darwin" ]]; then
 fi
 
 export FLY_API_TOKEN="$FLY_API_TOKEN"
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
