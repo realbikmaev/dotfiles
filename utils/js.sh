@@ -12,3 +12,7 @@ alias sr="npm run dev"
 alias sd="ENVIRONMENT=dev npm run dev"
 alias sp="npm run build && ENVIRONMENT=dev npm run preview"
 alias sprod="npm run build && node build"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
