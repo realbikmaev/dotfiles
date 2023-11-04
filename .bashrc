@@ -125,6 +125,20 @@ function exe() {
     code "$1"
 }
 
+function r() {
+    if [[ "$1" == *.py ]]; then
+        python3.10 "$1"
+    elif [[ "$1" == *.ts ]]; then
+        bun run "$1"
+    elif [[ "$1" == *.js ]]; then
+        bun run "$1"
+    elif [[ "$1" == *.sh ]]; then
+        bash "$1"
+    else
+        echo "unknown file type"
+    fi
+}
+
 source "$utils/python.sh"
 source "$utils/devops.sh"
 source "$utils/rust.sh"
