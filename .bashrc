@@ -139,6 +139,10 @@ function r() {
     fi
 }
 
+function kill_port {
+    lsof -ti ":$1" | xargs kill -9
+}
+
 source "$utils/python.sh"
 source "$utils/devops.sh"
 source "$utils/rust.sh"

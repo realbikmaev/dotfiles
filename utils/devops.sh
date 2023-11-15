@@ -45,3 +45,5 @@ fi
 
 export FLY_API_TOKEN="$FLY_API_TOKEN"
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
