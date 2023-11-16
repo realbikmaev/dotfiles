@@ -1,6 +1,7 @@
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # export platform=$(uname)
 
@@ -25,6 +26,8 @@ alias pi="pip3 install $1"
 alias pu="pip3 install -U $1"
 alias pui="pip3 uninstall -y $1"
 
+# remember that poetry is installed via pipx
+# TODO: add installation of poetry, pyenv, and pipx to setup.sh
 alias pp="poetry"
 alias ppa="poetry add $1"
 alias ppd="poetry add --dev $1"
