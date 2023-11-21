@@ -53,7 +53,8 @@ function pvn() {
 }
 
 function bb() {
-    black -l 78 .
+    ruff format --line-length 78 .
+    # black -l 78 .
 }
 
 alias cov="open ./htmlcov/index.html"
