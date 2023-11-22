@@ -14,6 +14,7 @@ HISTSIZE=1000
 HISTFILESIZE=10000
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 export platform=$(uname)
 dotfiles="$HOME/dotfiles"
 utils="$dotfiles/utils"
