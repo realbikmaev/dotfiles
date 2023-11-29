@@ -32,6 +32,7 @@ alias kh="code $HOME/.ssh/known_hosts"
 alias hi="history | grep $1"
 alias h="history | less"
 alias v="vim"
+alias n="nvim"
 alias vsc="code ~/Library/Application\ Support/Code/User/settings.json"
 
 if [[ "$TMUX_AS_SUDO" == "true" ]]; then
@@ -86,6 +87,7 @@ function repo() {
     mkdir "$1"
     cd "$1" || return
     git init --initial-branch=master # chaotic evil
+    touch README.md
     code .
 }
 
