@@ -11,7 +11,12 @@ nnoremap j h
 nnoremap k j
 nnoremap l k
 nnoremap ; l
-inoremap jj <ESC>
+vnoremap j h
+vnoremap k j
+vnoremap l k
+vnoremap ; l
+inoremap <Space><Space> <ESC>
+vnoremap <Space><Space> <ESC>
 set noswapfile
 set nobackup
 set nowritebackup
