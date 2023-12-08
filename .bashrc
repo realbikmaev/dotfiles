@@ -19,6 +19,7 @@ export platform=$(uname)
 dotfiles="$HOME/dotfiles"
 utils="$dotfiles/utils"
 source "$dotfiles/load_secrets.sh"
+export EDITOR=hx
 
 alias prod="ENVIRONMENT=prod env=prod $1"
 alias dev="ENVIRONMENT=dev env=dev $1"
