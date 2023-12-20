@@ -1,9 +1,0 @@
-def whatever(some: int) -> str:
-    print(f"thing {some=}")
-    
-    return 0
-
-
-class Whatever:
-    has_another: List[str]
-    mother_is_dead:: bool
