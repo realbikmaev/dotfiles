@@ -108,6 +108,10 @@ function repo() {
     code .
 }
 
+function del {
+    rm -rf "$1"
+}
+
 function dot-remote() {
     user="$1"
     host="$2"
