@@ -82,7 +82,7 @@ function cd() {
     fi
 
     if [ -e ".python-version" ]; then
-        activate-venv
+        venv
     fi
 
     ls
@@ -138,9 +138,8 @@ function dot-scp {
         port=22
     fi
 
-    scp -r -P "$port" \
-        "$dotfiles/" \
-        "$user@$host:/home/$user/dotfiles"
+    # redirect its stdout into this script's stdout
+    python3 "$dotfiles/scp.py" "$user" "$host" "$port"
 }
 
 function exe() {
