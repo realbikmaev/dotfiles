@@ -68,10 +68,10 @@ function work {
     cd "$HOME/Work" || return
 }
 
-function activate-venv {
-    venv_script=$(python3 "$dotfiles/activate-venv.py")
-    echo "$venv_script"
-    source "$venv_script"
+function venv {
+    activate_script=$(python3 "$dotfiles/activate.py")
+    echo "$activate_script"
+    source "$activate_script"
 }
 
 function cd() {
