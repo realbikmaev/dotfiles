@@ -56,11 +56,22 @@ alias tk="t kill-session -t $1"
 alias tc="t source-file ~/.tmux.conf"
 alias z="zellij"
 alias zls="zellij list-sessions"
-
 export PS1='\[\e[38;5;211m\]\u\[\e[38;5;220m\]@\[\e[38;5;79m\]\H \[\e[38;5;177m\]\w \[\e[0m\]\$ '
+
 alias s="source ~/.bashrc"
+
 function b {
     bash "$1.sh"
+}
+
+function work {
+    cd "$HOME/Work" || return
+}
+
+function activate-venv {
+    venv_script=$(python3 "$dotfiles/activate-venv.py")
+    echo "$venv_script"
+    source "$venv_script"
 }
 
 function cd() {
@@ -69,6 +80,11 @@ function cd() {
     else
         builtin cd "$1" || return
     fi
+
+    if [ -e ".python-version" ]; then
+        activate-venv
+    fi
+
     ls
 }
 
