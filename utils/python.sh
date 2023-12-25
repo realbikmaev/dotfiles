@@ -10,7 +10,12 @@ if [ "$platform" == "Linux" ]; then
         eval "$(pyenv init --no-rehash --path)" >/dev/null 2>&1
     fi
 elif [ "$platform" == "Darwin" ]; then
-    eval "$(/opt/homebrew/bin/pyenv init - --no-rehash)"
+    if [ -d "/opt/homebrew/bin/pyenv" ]; then
+        eval "$(/opt/homebrew/bin/pyenv init - --no-rehash)" 2>/dev/null
+    fi
+    if [ -d "/Users/bikmaev/.pyenv/bin/pyenv" ]; then
+        eval "$(/Users/bikmaev/.pyenv/bin/pyenv init - --no-rehash)" 2>/dev/null
+    fi
 fi
 
 if which pyenv-virtualenv-init >/dev/null 2>&1; then

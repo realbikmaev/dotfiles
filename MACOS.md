@@ -62,6 +62,9 @@
                 -   brave
                     ![brave shortcuts](lmao/image.png)
                 -   asdf
+            -   mission control
+                -   mission control OFF
+                -   quick note OFF
 
     -   trackpad
         -   tracking_speed[-3]

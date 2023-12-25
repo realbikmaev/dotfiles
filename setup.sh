@@ -21,3 +21,11 @@ if [[ "$platform" == "Linux" ]]; then
     cargo install zellij
     curl -L https://fly.io/install.sh | sh
 fi
+
+if [[ "$platform" == "Darwin" ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install curl
+    curl https://pyenv.run | bash
+    brew install nvm
+    nvm install --lts
+fi
