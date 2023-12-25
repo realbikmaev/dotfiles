@@ -65,6 +65,8 @@
 
     -   trackpad
         -   tracking_speed[-3]
+        -   more gestures
+            -   app expose swipe down with three fingers
 
 -   telegram
 

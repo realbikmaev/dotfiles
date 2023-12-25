@@ -3,8 +3,7 @@ secrets="$HOME/dotfiles/secrets.sh"
 
 if [ ! -f "$secrets" ]; then
     cp "$HOME/dotfiles/secrets.example.sh" "$HOME/dotfiles/secrets.sh"
+    python3 "$HOME/dotfiles/config.py"
 fi
 
 source "$secrets"
-source "$HOME/dotfiles/utils/config.sh"
-init_vars "${vars[@]}"
