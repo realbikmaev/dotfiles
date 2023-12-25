@@ -16,6 +16,8 @@ also remember to set `Natural Text Editing` in iTerm2
 
 global workflow shortcuts: run shell cmd in automator workflow, save as service, set shortcut in keyboard settings -> services -> general
 
+also don't forget `chsh -s /bin/bash`
+
 # fun facts
 
 do look at [this](https://github.com/realbikmaev/dotfiles/blob/main/lmao/lmao.sh) script to learn how to create self-modifying bash scripts
