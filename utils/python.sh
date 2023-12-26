@@ -62,6 +62,10 @@ function pvn() {
     utilki venv "$1"
 }
 
+function venvs {
+    pyenv virtualenvs
+}
+
 function bb() {
     ruff format --line-length 78 .
     # black -l 78 .

@@ -1,6 +1,7 @@
 alias docker="sudo docker"
 alias dc="docker-compose"
 alias dkc="docker ps | awk '{print $1}' | xargs docker kill"
+
 function dcu() {
     if [ -z "$1" ]; then
         file="./docker-compose.yml"
