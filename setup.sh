@@ -30,6 +30,6 @@ if [[ "$platform" == "Darwin" ]]; then
     nvm install --lts
     pyenv global "3.11.5"
     python3 -m pip install poetry utilki
-    brew install tmux vim htop direnv
+    brew install tmux vim htop direnv tree
     brew install --cask openvpn-connect
 fi
