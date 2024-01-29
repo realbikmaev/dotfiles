@@ -48,8 +48,12 @@ function tn() {
     t new-session -n "$session_name" -s "$session_name"
 }
 function ta() {
-    local session_name="$(tmux list-sessions -F "#{session_name}" | sort | tail -n 1)"
-    t attach-session -t "$session_name"
+    if [ -n "$1" ]; then
+        tmux attach-session -t "$1"
+    else
+        local session_name="$(tmux list-sessions -F "#{session_name}" | sort | tail -n 1)"
+        tmux attach-session -t "$session_name"
+    fi
 }
 alias tl="t list-sessions"
 alias ts="t attach-session -t $1"
