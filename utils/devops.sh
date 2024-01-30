@@ -19,7 +19,7 @@ function dcud() {
         file="$1"
     fi
     echo "$file"
-    dc -f "$file" up --build -d
+    dc -f "$file" up --build -d --remove-orphans
 }
 
 function dcd() {
