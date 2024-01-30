@@ -11,6 +11,17 @@ function dcu() {
     echo "$file"
     dc -f "$file" up --build
 }
+
+function dcud() {
+    if [ -z "$1" ]; then
+        file="./docker-compose.yml"
+    else
+        file="$1"
+    fi
+    echo "$file"
+    dc -f "$file" up --build -d
+}
+
 function dcd() {
     dc -f "$1" down
 }
