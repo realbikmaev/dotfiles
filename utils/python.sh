@@ -31,7 +31,9 @@ alias p="python3"
 alias pv="pyenv"
 alias pr="python3 -m $1"
 alias pm="python3 -m app.main"
-alias pt="python3 -m app.test"
+# alias pt="python3 -m app.test"
+alias pt="pytest"
+alias pp="pytest -v -k $1"
 alias pip="pip3"
 alias pi="pip3 install $1"
 alias pu="pip3 install -U $1"
@@ -39,7 +41,6 @@ alias pui="pip3 uninstall -y $1"
 
 # remember that poetry is installed via pipx
 # TODO: add installation of poetry, pyenv, and pipx to setup.sh
-alias pp="poetry"
 alias ppa="poetry add $1"
 alias ppd="poetry add --dev $1"
 alias ppr="poetry remove $1"
