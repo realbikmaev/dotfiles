@@ -31,7 +31,15 @@ alias zz="code ~/.bashrc"
 alias ss="code ~/dotfiles/secrets.sh"
 alias ec="echo $?"
 alias kh="code $HOME/.ssh/known_hosts"
-alias hi="history | grep $1"
+function hi() {
+    if [[ -z "$1" ]]; then
+        history 20
+    elif [[ "$1" =~ ^[0-9]+$ ]]; then
+        history "$1"
+    else
+        history | grep "$1"
+    fi
+}
 alias h="history | less"
 alias v="vim"
 alias n="nvim"
