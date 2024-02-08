@@ -42,7 +42,7 @@ alias ff="flyctl logs"
 alias fp="flyctl machine api-proxy"
 alias dd="flyctl deploy --strategy=immediate --detach"
 
-alias w="wrangler"
+alias wr="wrangler"
 alias tunnel="cloudflared tunnel --url $1"
 
 if [[ "$platform" == "Linux" ]]; then
@@ -55,14 +55,12 @@ if [[ "$platform" == "Darwin" ]]; then
     source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 fi
 
+eval "$(direnv hook bash)"
 export FLY_API_TOKEN="$FLY_API_TOKEN"
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export UBUNTU="/Users/bikmaev/OrbStack/ubuntu/home/bikmaev"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-eval "$(direnv hook bash)"
-
-function run() {
-    [ -f "./run.sh" ] && ./run.sh || echo "no run.sh file found"
-}
+alias w="watchexec -r \"$1\""
+alias run="w bash run.sh"
