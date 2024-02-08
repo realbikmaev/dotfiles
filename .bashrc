@@ -1,3 +1,4 @@
+#!/bin/bash
 time::clock() {
     [ -z "$ts" ] && {
         ts=$(date +%s%N)
@@ -16,7 +17,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
-export platform=$(uname)
+platform=$(uname)
+export platform
 dotfiles="$HOME/dotfiles"
 utils="$dotfiles/utils"
 source "$dotfiles/load_secrets.sh"

@@ -28,6 +28,10 @@ function dcd() {
 
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
+function w() {
+    bash -i -c "watchexec -r \"$*\""
+}
+
 alias tf="terraform"
 alias tfi="terraform init"
 alias tfiu="terraform init -upgrade"
@@ -62,5 +66,3 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export UBUNTU="/Users/bikmaev/OrbStack/ubuntu/home/bikmaev"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-alias w="watchexec -r \"$1\""
-alias run="w bash run.sh"
