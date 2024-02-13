@@ -29,8 +29,9 @@ function dcd() {
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 function w() {
-    bash -i -c "watchexec -r \"$*\""
+    bash -i -c "watchexec -r \"$1\""
 }
+alias we="watchexec"
 
 alias tf="terraform"
 alias tfi="terraform init"
