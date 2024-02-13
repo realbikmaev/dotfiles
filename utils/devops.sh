@@ -67,3 +67,5 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export UBUNTU="/Users/bikmaev/OrbStack/ubuntu/home/bikmaev"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+alias cm="git commit -m $1"
