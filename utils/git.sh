@@ -28,7 +28,7 @@ function git_proxy {
 alias gg="git add . && git commit -m 'asdf'"
 alias gp="git add . && git commit -m 'asdf' && git push"
 alias gm="git commit -m $1"
-alias gc="git cherry-pick $1"
+alias gc="git cherry-pick --rerere-autoupdate $1"
 
 function all_repos() {
     local work="$HOME/work"

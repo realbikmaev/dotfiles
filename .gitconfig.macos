@@ -9,3 +9,5 @@ default = simple
 helper = osxkeychain
 [pull]
 rebase = true
+[rerere]
+	enabled = true
