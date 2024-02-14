@@ -30,6 +30,7 @@ alias cp='cp -Rv'
 alias ll="ls -lahtrFG"
 alias ls="ls -lahFG"
 alias zz="code ~/.bashrc"
+alias zzz="code ~/dotfiles"
 alias ss="code ~/dotfiles/secrets.sh"
 alias ec="echo $?"
 alias kh="code $HOME/.ssh/known_hosts"
@@ -69,8 +70,6 @@ alias tl="t list-sessions"
 alias ts="t attach-session -t $1"
 alias tk="t kill-session -t $1"
 alias tc="t source-file ~/.tmux.conf"
-alias z="zellij"
-alias zls="zellij list-sessions"
 export PS1='\[\e[38;5;211m\]\u\[\e[38;5;220m\]@\[\e[38;5;79m\]\H \[\e[38;5;177m\]\w \[\e[0m\]\$ '
 
 alias s="source ~/.bashrc"
