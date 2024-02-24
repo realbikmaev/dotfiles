@@ -11,3 +11,5 @@ helper = osxkeychain
 rebase = true
 [rerere]
 	enabled = true
+[core]
+	editor = code --wait
