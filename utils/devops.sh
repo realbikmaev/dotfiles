@@ -47,7 +47,6 @@ alias ff="flyctl logs"
 alias fp="flyctl machine api-proxy"
 alias dd="flyctl deploy --strategy=immediate --detach"
 
-alias wr="wrangler"
 alias tunnel="cloudflared tunnel --url $1"
 
 if [[ "$platform" == "Linux" ]]; then
