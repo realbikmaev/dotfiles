@@ -171,6 +171,13 @@ function r() {
         bun run "$1"
     elif [[ "$1" == *.sh ]]; then
         bash "$1"
+    elif [[ "$1" == *.cpp ]]; then
+        # ./example.cpp to ./example
+        clang++ -std=c++11 -stdlib=libc++ -o "${1%.*}" "$1" && ./"${1%.*}"
+    elif [[ "$1" == *.c ]]; then
+        clang -std=c99 -o "${1%.*}" "$1" && ./"${1%.*}"
+    elif [[ "$1" == *.rs ]]; then
+        rustc "$1" && ./"${1%.*}"
     else
         echo "unknown file type"
     fi

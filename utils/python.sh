@@ -45,6 +45,7 @@ alias pui="pip3 uninstall -y $1"
 alias wt="watchexec -r -w \".\" \"pytest -v\""
 alias wk="watchexec -r -w \".\" \"pytest -v -k $1\""
 alias wr="watchexec -r -w \".\" \"python3 -m $1\""
+alias we="watchexec -r -c -i \"runtime.py\" -w \".\" \"python3 -m $1\""
 
 # remember that poetry is installed via pipx
 # TODO: add installation of poetry, pyenv, and pipx to setup.sh

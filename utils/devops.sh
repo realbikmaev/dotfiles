@@ -31,7 +31,6 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 function w() {
     bash -i -c "watchexec -r \"$1\""
 }
-alias we="watchexec"
 
 alias tf="terraform"
 alias tfi="terraform init"
@@ -66,3 +65,8 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export UBUNTU="/Users/bikmaev/OrbStack/ubuntu/home/bikmaev"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+alias gem="brew gem"
+
+alias p3="/usr/local/bin/python3"
