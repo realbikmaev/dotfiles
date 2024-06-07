@@ -58,7 +58,6 @@ if [[ "$platform" == "Darwin" ]]; then
     source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 fi
 
-eval "$(direnv hook bash)"
 export FLY_API_TOKEN="$FLY_API_TOKEN"
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
