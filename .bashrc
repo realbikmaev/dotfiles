@@ -175,7 +175,7 @@ function r() {
         # ./example.cpp to ./example
         clang++ -std=c++11 -stdlib=libc++ -o "${1%.*}" "$1" && ./"${1%.*}"
     elif [[ "$1" == *.c ]]; then
-        clang -std=c99 -o "${1%.*}" "$1" && ./"${1%.*}"
+        clang -std=c99 -o "${1%.*}" "$1" && ./"${1%.*}"insta
     elif [[ "$1" == *.rs ]]; then
         rustc "$1" && ./"${1%.*}"
     else
