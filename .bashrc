@@ -187,13 +187,17 @@ function kill_port {
     lsof -ti ":$1" | xargs kill -9
 }
 
+alias sshc="code ~/.ssh/config"
+
 source "$utils/python.sh"
 source "$utils/devops.sh"
 source "$utils/rust.sh"
 source "$utils/git.sh"
 source "$utils/js.sh"
 
-eval "$(/Users/bikmaev/.local/bin/mise activate bash)"
+if [[ "$platform" == "Darwin" ]]; then
+    eval "$(/Users/bikmaev/.local/bin/mise activate bash)"
+fi
 tuist() {
     mise x -c "tuist $*"
 }
