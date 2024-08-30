@@ -188,6 +188,7 @@ function kill_port {
 }
 
 alias sshc="code ~/.ssh/config"
+alias nvs="nvidia-smi"
 
 source "$utils/python.sh"
 source "$utils/devops.sh"
