@@ -162,6 +162,8 @@ function exe() {
     code "$1"
 }
 
+alias x="chmod +x $1"
+
 function r() {
     if [[ "$1" == *.py ]]; then
         python3.10 "$1"
