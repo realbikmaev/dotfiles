@@ -119,6 +119,7 @@ function repo() {
     cd "$1" || return
     git init --initial-branch=master # chaotic evil
     touch README.md
+    touch repo
     code .
 }
 
@@ -204,4 +205,28 @@ fi
 tuist() {
     mise x -c "tuist $*"
 }
+
+copy_to() {
+    if [ "$#" -ne 2 ]; then
+        echo "usage: copy_to <ssh_alias> <file_path>"
+        return 1
+    fi
+
+    ssh_alias="$1"
+    file_path="$2"
+
+    absolute_path=$(realpath "$file_path")
+
+    relative_path="${absolute_path#$HOME/}"
+
+    if [ "$relative_path" = "$absolute_path" ]; then
+        echo "file is not inside the home directory"
+        return 1
+    fi
+
+    remote_dir="~/${relative_path%/*}"
+    ssh "$ssh_alias" "mkdir -p \"$remote_dir\""
+    scp "$file_path" "$ssh_alias:~/$relative_path"
+}
+
 # echo "loaded in $(time::clock) seconds"
