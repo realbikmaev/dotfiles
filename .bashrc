@@ -127,6 +127,8 @@ function del {
     rm -rf "$1"
 }
 
+alias trash="open ~/.Trash"
+
 function dot-remote() {
     user="$1"
     host="$2"
