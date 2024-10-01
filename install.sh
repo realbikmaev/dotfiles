@@ -1,3 +1,14 @@
+#!/usr/bin/env bash
+
+if [ "$#" -ne 1 ]; then
+    echo "usage: $0 <server|local>"
+    exit 1
+fi
+
+if [ "$1" = "server" ]; then
+    cp ~/dotfiles/secrets.example.sh ~/dotfiles/secrets.sh
+fi
+
 rm -rf ~/.bashrc
 rm -rf ~/.gitconfig
 rm -rf ~/.bash_profile
