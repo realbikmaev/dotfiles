@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-if [ "$#" -ne 1 ]; then
-    echo "usage: $0 <server|local>"
-    exit 1
-fi
+# `./install.sh` to ask for secrets
+# `./install.sh server` to skip asking for secrets
 
 if [ "$1" = "server" ]; then
     cp ~/dotfiles/secrets.example.sh ~/dotfiles/secrets.sh
