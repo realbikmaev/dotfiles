@@ -231,4 +231,6 @@ copy_to() {
     scp "$file_path" "$ssh_alias:~/$relative_path"
 }
 
-# echo "loaded in $(time::clock) seconds"
+if command -v direnv &>/dev/null; then
+    eval "$(direnv hook bash)"
+fi
