@@ -25,7 +25,7 @@ function git_proxy {
     git config --global http.proxy "$1"
 }
 
-alias gg="git add . && git commit -m 'asdf'"
+alias gg="git add . ':!vendor' && git commit -m 'asdf'"
 alias gp="git push"
 alias gm="git commit -m $1"
 alias gc="git cherry-pick --rerere-autoupdate $1"
