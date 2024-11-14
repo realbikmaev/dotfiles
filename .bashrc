@@ -234,3 +234,5 @@ copy_to() {
 if command -v direnv &>/dev/null; then
     eval "$(direnv hook bash)"
 fi
+
+# echo "loaded in $(time::clock) seconds"
