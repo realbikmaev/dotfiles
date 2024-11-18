@@ -8,7 +8,7 @@ time::clock() {
     unset ts te
 }
 # time::clock
-# bind -s 'set completion-ignore-case on'
+bind -s 'set completion-ignore-case on'
 shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
