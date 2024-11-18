@@ -1,4 +1,7 @@
 #!/bin/bash
+platform=$(uname)
+export platform
+
 time::clock() {
     [ -z "$ts" ] && {
         ts=$(date +%s%N)
@@ -8,7 +11,12 @@ time::clock() {
     unset ts te
 }
 # time::clock
-bind -s 'set completion-ignore-case on'
+
+case "$platform" in
+Darwin) bind -s 'set completion-ignore-case on' ;;
+Linux) bind 'set completion-ignore-case on' 2>/dev/null || echo "set completion-ignore-case on" >>~/.inputrc ;;
+esac
+
 shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
@@ -17,8 +25,6 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
-platform=$(uname)
-export platform
 dotfiles="$HOME/dotfiles"
 utils="$dotfiles/utils"
 source "$dotfiles/load_secrets.sh"
