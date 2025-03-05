@@ -32,14 +32,24 @@ export EDITOR=hx
 
 alias prod="ENVIRONMENT=prod env=prod $1"
 alias dev="ENVIRONMENT=dev env=dev $1"
+alias cl="claude"
 alias cp='cp -Rv'
 alias ll="ls -lahtrFG"
 alias ls="ls -lahFG"
-alias zz="code ~/.bashrc"
-alias zzz="code ~/dotfiles"
-alias ss="code ~/dotfiles/secrets.sh"
+alias zz="cursor ~/.bashrc"
+alias zzz="cursor ~/dotfiles"
+alias ss="cursor ~/dotfiles/secrets.sh"
 alias ec="echo $?"
-alias kh="code $HOME/.ssh/known_hosts"
+alias kh="cursor $HOME/.ssh/known_hosts"
+
+function g() {
+    if [[ -z "$1" ]]; then
+        open -a Ghostty .
+    else
+        open -a Ghostty "$1"
+    fi
+}
+
 function hi() {
     if [[ -z "$1" ]]; then
         history 20
@@ -52,6 +62,7 @@ function hi() {
 alias h="history | less"
 alias v="vim"
 alias n="nvim"
+alias c="cursor"
 alias vsc="code ~/Library/Application\ Support/Code/User/settings.json"
 
 if [[ "$TMUX_AS_SUDO" == "true" ]]; then
@@ -126,7 +137,7 @@ function repo() {
     git init --initial-branch=master # chaotic evil
     touch README.md
     touch repo
-    code .
+    cursor .
 }
 
 function del {
