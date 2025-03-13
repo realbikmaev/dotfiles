@@ -218,12 +218,12 @@ source "$utils/rust.sh"
 source "$utils/git.sh"
 source "$utils/js.sh"
 
-if [[ "$platform" == "Darwin" ]]; then
-    eval "$(/Users/bikmaev/.local/bin/mise activate bash)"
-fi
-tuist() {
-    mise x -c "tuist $*"
-}
+# if [[ "$platform" == "Darwin" ]]; then
+#     eval "$(/Users/bikmaev/.local/bin/mise activate bash)"
+# fi
+# tuist() {
+#     mise x -c "tuist $*"
+# }
 
 copy_to() {
     if [ "$#" -ne 2 ]; then

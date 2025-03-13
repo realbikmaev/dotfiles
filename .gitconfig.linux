@@ -7,3 +7,5 @@ defaultBranch = master
 default = simple
 [credential]
 helper = store
+[url "git@github.com:"]
+        insteadOf = https://github.com/
