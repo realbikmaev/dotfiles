@@ -12,6 +12,6 @@ rebase = true
 [rerere]
 	enabled = true
 [core]
-	editor = code --wait
+	editor = cursor --wait
 [commit]
 	gpgsign = false

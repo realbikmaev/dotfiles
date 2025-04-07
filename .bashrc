@@ -64,7 +64,7 @@ alias h="history | less"
 alias v="vim"
 alias n="nvim"
 alias c="cursor"
-alias vsc="code ~/Library/Application\ Support/Code/User/settings.json"
+alias vsc="cursor ~/Library/Application\ Support/Cursor/User/settings.json"
 
 if [[ "$TMUX_AS_SUDO" == "true" ]]; then
     alias t="sudo -u khaidar tmux"
@@ -180,7 +180,7 @@ function dot-scp {
 function exe() {
     touch "$1"
     chmod +x "$1"
-    code "$1"
+    cursor "$1"
 }
 
 alias x="chmod +x $1"
@@ -210,7 +210,7 @@ function kill_port {
     lsof -ti ":$1" | xargs kill -9
 }
 
-alias sshc="code ~/.ssh/config"
+alias sshc="cursor ~/.ssh/config"
 alias nvs="nvidia-smi"
 
 source "$utils/python.sh"
