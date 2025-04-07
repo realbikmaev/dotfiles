@@ -16,6 +16,3 @@ alias sprod="npm run build && node build"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
-
-alias d="deno run -A $1"
-alias dr="deno run -A --watch $1"
