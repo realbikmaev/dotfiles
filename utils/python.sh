@@ -28,7 +28,7 @@ if which pyenv-virtualenv-init >/dev/null 2>&1; then
     eval "$(pyenv virtualenv-init -)" 2>/dev/null
 fi
 
-alias p="python3"
+alias py="python3"
 alias pv="pyenv"
 alias pr="python3 -m $1"
 alias pm="python3 -m app.main"

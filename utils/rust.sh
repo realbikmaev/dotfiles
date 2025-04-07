@@ -8,4 +8,5 @@ alias ct="watchexec -r -w \"./src\" \"cargo test -- --nocapture -q\""
 alias ci="watchexec -r -w \"./src\" \"cargo install -q --path . && $1\""
 alias cr="watchexec -r -w \"./src\" \"cargo run -q --\""
 alias cc="cargo check"
+alias cf=
 alias cb="cargo bench"
