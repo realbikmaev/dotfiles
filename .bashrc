@@ -137,7 +137,6 @@ function repo() {
     cd "$1" || return
     git init --initial-branch=master # chaotic evil
     touch README.md
-    touch repo
     cursor .
 }
 
