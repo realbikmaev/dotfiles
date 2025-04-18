@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+        "koding": {
+            "command": "/bin/bash",
+            "args": ["-lc", "cd /Users/bikmaev/Work/koding.js && npm start"]
+        }
+    }
+}
