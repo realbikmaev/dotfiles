@@ -2,7 +2,21 @@
     "mcpServers": {
         "koding": {
             "command": "/bin/bash",
-            "args": ["-lc", "cd /Users/bikmaev/Work/koding.js && npm start"]
+            "args": [
+                "-lc",
+                "builtin cd /Users/bikmaev/Work/koding.js && npm --silent start"
+            ]
+        },
+        "brave-search": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@smithery/cli@latest",
+                "run",
+                "@smithery-ai/brave-search",
+                "--config",
+                "\"{\\\"braveApiKey\\\":\\\"BSAa3SSBBYVTqwwVwQhxdl5r3P4RPTh\\\"}\""
+            ]
         }
     }
 }
