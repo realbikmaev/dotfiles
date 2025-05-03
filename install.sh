@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-# `./install.sh` to ask for secrets
-# `./install.sh server` to skip asking for secrets
+# `./install.sh` to skip secrets setup
+# `./install.sh --secrets` to set up secrets
 
-if [ "$1" = "server" ]; then
+if [ "$1" = "--secrets" ]; then
     cp ~/dotfiles/secrets.example.sh ~/dotfiles/secrets.sh
+    python3 ~/dotfiles/config.py
 fi
 
 rm -rf ~/.bashrc
