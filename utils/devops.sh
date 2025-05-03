@@ -49,7 +49,7 @@ alias dd="flyctl deploy --strategy=immediate --detach"
 alias tunnel="cloudflared tunnel --url $1"
 
 if [[ "$platform" == "Linux" ]]; then
-    export FLYCTL_INSTALL="/home/khaidar/.fly"
+    export FLYCTL_INSTALL="/home/bikmaev/.fly"
     export PATH="$FLYCTL_INSTALL/bin:$PATH"
 fi
 
