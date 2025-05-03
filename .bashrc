@@ -218,13 +218,6 @@ source "$utils/rust.sh"
 source "$utils/git.sh"
 source "$utils/js.sh"
 
-# if [[ "$platform" == "Darwin" ]]; then
-#     eval "$(/Users/bikmaev/.local/bin/mise activate bash)"
-# fi
-# tuist() {
-#     mise x -c "tuist $*"
-# }
-
 copy_to() {
     if [ "$#" -ne 2 ]; then
         echo "usage: copy_to <ssh_alias> <file_path>"
@@ -250,6 +243,10 @@ copy_to() {
 
 if command -v direnv &>/dev/null; then
     eval "$(direnv hook bash)"
+fi
+
+if [[ "$platform" == "Linux" ]]; then
+    export PATH="/usr/local/cuda/bin:${PATH}"
 fi
 
 # echo "loaded in $(time::clock) seconds"
