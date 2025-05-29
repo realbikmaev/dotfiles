@@ -249,4 +249,6 @@ if [[ "$platform" == "Linux" ]]; then
     export PATH="/usr/local/cuda/bin:${PATH}"
 fi
 
+alias claude="/Users/bikmaev/.claude/local/claude"
+
 # echo "loaded in $(time::clock) seconds"
