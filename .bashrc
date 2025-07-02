@@ -251,5 +251,7 @@ fi
 
 alias claude="/Users/bikmaev/.claude/local/claude"
 eval "$(fzf --bash)"
+alias cu="ccusage --since $(date +%Y%m%d)"
+alias cul="ccusage blocks --live"
 
 # echo "loaded in $(time::clock) seconds"
