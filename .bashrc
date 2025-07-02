@@ -250,5 +250,6 @@ if [[ "$platform" == "Linux" ]]; then
 fi
 
 alias claude="/Users/bikmaev/.claude/local/claude"
+eval "$(fzf --bash)"
 
 # echo "loaded in $(time::clock) seconds"
