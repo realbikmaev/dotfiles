@@ -32,8 +32,7 @@ export EDITOR=hx
 
 alias prod="ENVIRONMENT=prod env=prod $1"
 alias dev="ENVIRONMENT=dev env=dev $1"
-alias cl="claude"
-alias clu="npm i -g @anthropic-ai/claude-code"
+alias cl="claude --dangerously-skip-permissions"
 alias cp='cp -Rv'
 alias ll="ls -lahtrFG --color=auto"
 alias ls="ls -lahFG --color=auto"
