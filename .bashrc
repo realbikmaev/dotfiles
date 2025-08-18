@@ -252,9 +252,9 @@ if [ -f '/Users/bikmaev/Work/google-cloud-sdk/path.bash.inc' ]; then . '/Users/b
 if [ -f '/Users/bikmaev/Work/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/bikmaev/Work/google-cloud-sdk/completion.bash.inc'; fi
 
 export PATH=/Users/bikmaev/.opencode/bin:$PATH
-alias claude="/Users/bikmaev/.claude/local/claude"
 eval "$(fzf --bash)"
 alias cu="ccusage --since $(date +%Y%m%d)"
 alias cul="ccusage blocks --live"
+alias files="rg -l '.*'"
 
 # echo "loaded in $(time::clock) seconds"
