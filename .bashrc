@@ -256,5 +256,7 @@ eval "$(fzf --bash)"
 alias cu="ccusage --since $(date +%Y%m%d)"
 alias cul="ccusage blocks --live"
 alias files="rg -l '.*'"
-
+alias cl="claude"
+alias wcl="cd ./Work && claude"
+alias cla="cd ./Work && claude --dangerously-skip-permissions"
 # echo "loaded in $(time::clock) seconds"

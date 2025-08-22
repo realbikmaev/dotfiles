@@ -8,10 +8,12 @@ default = simple
 [credential]
 helper = osxkeychain
 [pull]
-rebase = true
+	rebase = false
 [rerere]
 	enabled = true
 [core]
 	editor = cursor --wait
 [commit]
 	gpgsign = false
+[rebase]
+	autoStash = true
