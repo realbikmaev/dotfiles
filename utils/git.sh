@@ -29,6 +29,7 @@ alias gg="git add . ':!vendor' && git commit -m 'asdf'"
 alias gp="git push"
 alias gm="git commit -m $1"
 alias gc="git cherry-pick --rerere-autoupdate $1"
+alias gs="git status"
 
 function all_repos() {
     local work="$HOME/work"
