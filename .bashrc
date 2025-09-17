@@ -33,7 +33,6 @@ alias h="hx"
 
 alias prod="ENVIRONMENT=prod env=prod $1"
 alias dev="ENVIRONMENT=dev env=dev $1"
-alias cl="claude --dangerously-skip-permissions"
 alias cp='cp -Rv'
 alias ll="ls -lahtrFG --color=auto"
 alias ls="ls -lahFG --color=auto"
@@ -253,11 +252,10 @@ if [ -f '/Users/bikmaev/Work/google-cloud-sdk/completion.bash.inc' ]; then . '/U
 
 export PATH=/Users/bikmaev/.opencode/bin:$PATH
 eval "$(fzf --bash)"
-alias cu="ccusage --since $(date +%Y%m%d)"
-alias cul="ccusage blocks --live"
+alias ccu="ccusage --since $(date +%Y%m%d)"
+alias ccl="ccusage blocks --live"
 alias files="rg -l '.*'"
-alias cl="claude"
+alias cl="claude --dangerously-skip-permissions"
+alias clr="ccr code --dangerously-skip-permissions"
 alias cmd="cursor $HOME/.claude/CLAUDE.md"
-alias clw="cd ./Work && claude"
-alias cld="cd ./Work && claude --dangerously-skip-permissions"
 # echo "loaded in $(time::clock) seconds"
