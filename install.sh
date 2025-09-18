@@ -19,8 +19,8 @@ if [[ "$platform" == "Linux" ]]; then
     ln -s ~/dotfiles/.gitconfig.linux ~/.gitconfig
 elif [[ "$platform" == "Darwin" ]]; then
     ln -s ~/dotfiles/.gitconfig.macos ~/.gitconfig
-    rm -rf ~/Library/Application\ Support/Claude/claude_desktop_config.json
-    ln -s ~/dotfiles/claude_desktop_config.json ~/Library/Application\ Support/Claude/claude_desktop_config.json
+    mkdir -p ~/.hammerspoon
+    ln -sf ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
 fi
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile

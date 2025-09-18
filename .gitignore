@@ -2,3 +2,4 @@ secrets.sh
 .vscode
 .mypy_cache
 test.py
+TODO.md
