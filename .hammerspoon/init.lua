@@ -22,16 +22,6 @@ local function logKeyPress(event)
             local keycode = event:getKeyCode()
             local char = hs.keycodes.map[keycode] or tostring(keycode)
 
-            if flags.shift and keycode == 36 then
-                local win = app:focusedWindow()
-                if win then
-                    local title = win:title()
-                    if string.find(title, "node") or string.find(title, "opencode") then
-                        hs.eventtap.keyStrokes("\\\n")
-                        return true
-                    end
-                end
-            end
 
             local hasModifiers = flags.ctrl or flags.alt or flags.shift or flags.cmd
             local isLetter = string.match(char, "^[a-z]$")

@@ -42,6 +42,33 @@ alias ss="cursor ~/dotfiles/secrets.sh"
 alias ec="echo $?"
 alias kh="cursor $HOME/.ssh/known_hosts"
 
+function rm() {
+    python3 << 'EOF'
+import os
+import sys
+
+SIZE_THRESHOLD = 10485760
+
+def handle_file(path):
+    size = os.path.getsize(path)
+    cmd = f"/bin/rm -rf '{path}'" if size > SIZE_THRESHOLD else f"/usr/bin/trash '{path}'"
+    os.system(cmd)
+
+def handle_dir(path):
+    for root, dirs, files in os.walk(path, topdown=False):
+        for f in files:
+            handle_file(os.path.join(root, f))
+        try:
+            os.rmdir(root)
+        except OSError:
+            pass
+
+args = [arg for arg in sys.argv[1:] if not arg.startswith('-')]
+for path in args:
+    handle_dir(path) if os.path.isdir(path) else handle_file(path)
+EOF
+}
+
 function g() {
     if [[ -z "$1" ]]; then
         open -a Ghostty .
@@ -106,12 +133,7 @@ function cd() {
     else
         builtin cd "$1" || return
     fi
-
-    if [ -e ".python-version" ]; then
-        venv
-    fi
-
-    ls
+    ls -lahtrFG --color=auto
 }
 
 function u {
@@ -134,11 +156,6 @@ function repo() {
     cursor .
 }
 
-function del {
-    rm -rf "$1"
-}
-
-alias trash="open ~/.Trash"
 
 function dot-remote() {
     user="$1"
