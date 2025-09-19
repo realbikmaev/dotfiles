@@ -94,10 +94,6 @@ function b {
     bash "$1.sh"
 }
 
-function work {
-    cd "$HOME/Work" || return
-}
-
 function venv {
     activate_script=$(python3 "$dotfiles/activate.py")
     echo "$activate_script"
@@ -257,5 +253,6 @@ alias ccl="ccusage blocks --live"
 alias files="rg -l '.*'"
 alias cl="claude --dangerously-skip-permissions"
 alias clr="ccr code --dangerously-skip-permissions"
+alias clw="builtin cd $HOME/Work && claude --dangerously-skip-permissions"
 alias cmd="cursor $HOME/.claude/CLAUDE.md"
 # echo "loaded in $(time::clock) seconds"

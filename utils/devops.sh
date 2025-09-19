@@ -28,7 +28,7 @@ function dcd() {
 
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
-function w() {
+function watch() {
     bash -i -c "watchexec -r \"$1\""
 }
 

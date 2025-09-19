@@ -3,3 +3,4 @@ secrets.sh
 .mypy_cache
 test.py
 TODO.md
+cursor.log
